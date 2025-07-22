@@ -9,5 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
-#Archivos sensibles
+#Archivos con datos sensibles o que no es necesario subir al repo
 .env
+credentials.json
+token.json
+adjuntos/
