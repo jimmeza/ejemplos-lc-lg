@@ -6,7 +6,7 @@
 
 
 ### Dependencias:
-langchain python-dotenv langchain-google-genai langchain-openai fastapi "uvicorn[standard]" langchain_google_community langgraph langchain-google-community[gmail]
+langchain python-dotenv langchain-google-genai langchain-openai fastapi "uvicorn[standard]" langchain_google_community langgraph langchain-google-community[gmail] langgraph-supervisor
 
 
 ### Ejemplo 1: Aplicación IA simple que permita determinar si un archivo PDF es una solicitud de vacaciones válida.

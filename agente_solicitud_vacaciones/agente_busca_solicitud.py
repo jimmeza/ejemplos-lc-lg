@@ -92,8 +92,8 @@ def main(args=None):
         stream_mode="values",
     )
 
-    #Se va mostrando en la consola cada interacción o mensaje del supervisor
-    #Para ver el detalle de lo que hace cada agente se debe revisar la traza en LangSmith (incluyendo las llamdas a las herrameintas)
+    #Se va mostrando en la consola cada interacción o mensaje del agente
+    #Se puede ver el detalle de lo que hace el agente al revisar la traza en LangSmith (incluyendo las llamdas a las herrameintas)
     for event in events:
         event["messages"][-1].pretty_print()
 
