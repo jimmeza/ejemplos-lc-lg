@@ -9,7 +9,7 @@ def make_system_prompt(agent_role: str):
         Eres un asistente IA del área de Gestión Humana y debes ayudar a procesar las solicitudes de vacaciones.
         Asegurate que las respuestas sean en español.
         Asegurate de obtener la información necesaria de las herramientas disponibles.
-        No llames a las herramientas de forma paralela o dará error, y puedes usar la carpeta "./adjuntos" para guardar archivos.
+        Asegurate de no llamar a las herramientas de forma paralela o dará error, y puedes usar la carpeta "./adjuntos" para guardar archivos.
 
         A continuación explico el procedimiento para procesar las solicitudes de vacaciones:
 
@@ -64,8 +64,9 @@ def build_vacation_request_agent():
             "Tu rol es solo buscar las posibles solicitudes de vacaciones, e identificar si son validas o invalidas,"
             "aunque no tengan archivos adjuntos se deben considerar como invalidas y procesarlas."
             "Considerar que los archivos adjuntos de cada correo se guardan en una subcarpeta que se llama igual al id del correo, como [carpeta_de_trabajo]/[id_correo]."
-            "Asegurate de que cada solicitud cumpla todas las condiciones para considerarla valida."
-            "trabajas con otro agente que se encargará de procesar las solicitudes que tu encuentres."
+            "Asegurate de que cada solicitud cumpla todas las condiciones para considerarla válida."
+            "También mostrar la fecha y hora de recepción de su correo."
+            "Trabajas con otro agente que se encargará de procesar las solicitudes que tu encuentres."
         ),
         name="vacation_request_agent"
     )

@@ -29,7 +29,8 @@ def build_vacation_process_agent():
     from langchain.chat_models import init_chat_model
     from langgraph.prebuilt import create_react_agent
 
-    llm = init_chat_model("google_genai:gemini-2.0-flash-lite", temperature=0)
+    #Se crea el chat model a usar con buena capacidad agentica o Tool Calling
+    llm = init_chat_model("google_genai:gemini-2.5-flash-lite", temperature=0)
 
     toolkit = GmailToolkit()
     #Se crea la lista de herramientas necesarias para cada agente
@@ -67,7 +68,7 @@ def main(args=None):
     vacation_process_agent = build_vacation_process_agent()
     
     #Se crea el chat model a usar con buena capacidad agentica o Tool Calling
-    llm = init_chat_model("google_genai:gemini-2.0-flash", temperature=0)
+    llm = init_chat_model("google_genai:gemini-2.0-flash-lite", temperature=0)
 
     #Se define el supervisor de los agentes, con su LLM, Prompt y lista de agentes
     supervisor = create_supervisor(
@@ -75,7 +76,7 @@ def main(args=None):
         model=llm,
         prompt=make_system_prompt(
             "Tu rol es coordinar con un agente encargado de identificar las solicitudes de vacaciones y "
-            "un agente encargado de procesar las solicitudes de vacaciones. Asignales trabajo a ambos agentes."
+            "un agente encargado de procesar las solicitudes de vacaciones. Asignales trabajo a ambos agentes sin pedir confirmaciones."
         ),
     ).compile()
 
