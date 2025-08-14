@@ -1,4 +1,4 @@
-# Ejemplos de LangChain y LangGrpah
+# Ejemplos de LangChain y LangGraph
 
 
 ## Desde una aplicación IA simple hasta un multiagente con MCP
